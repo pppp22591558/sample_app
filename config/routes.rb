@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   resources :users
   
   get 'users/new'
@@ -15,6 +15,14 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
+  
+  get 'sessions/new'
+  
+  get 'login' => 'sessions#new'
+  
+  post 'login' => 'sessions#create'
+  
+  delete 'logout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
